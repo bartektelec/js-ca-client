@@ -54,7 +54,7 @@ const Contact: React.FC<ContactProps> = () => {
 					message: '',
 				}}
 				validationSchema={ContactSchema}
-				onSubmit={(values) => console.log(values)}
+				onSubmit={(values) => alert('Sent' + JSON.stringify(values))}
 			>
 				{({ errors, touched }) => (
 					<Form className="flex flex-col max-w-sm mx-auto gap-4">

@@ -1,15 +1,36 @@
-import * as React from 'react';
+import React, { useContext } from 'react';
+import { useRouter } from 'next/router';
+import authContext from '../utils/auth';
 
 export interface LoginProps {}
 
 const Login: React.FC<LoginProps> = () => {
+	const router = useRouter();
+	const [login, setLogin] = React.useState<string>('');
+	const [password, setPassword] = React.useState<string>('');
+	const handleSubmit: React.FormEventHandler<HTMLFormElement> = (event) => {
+		event.preventDefault();
+		logIn({ identifier: login, password });
+	};
+
+	const { isLoggedIn, logIn } = useContext(authContext);
+
+	if (isLoggedIn()) {
+		router.push('/admin');
+	}
+
 	return (
 		<div>
-			<form className="flex flex-col max-w-sm mx-auto gap-4">
+			<form
+				className="flex flex-col max-w-sm mx-auto gap-4"
+				onSubmit={handleSubmit}
+			>
 				<label className="flex flex-col" htmlFor="login">
 					Login
 					<input
 						id="login"
+						value={login}
+						onChange={(e) => setLogin(e.currentTarget.value)}
 						className="border rounded-sm border-black"
 						name="login"
 					/>
@@ -18,6 +39,8 @@ const Login: React.FC<LoginProps> = () => {
 					Password
 					<input
 						id="password"
+						value={password}
+						onChange={(e) => setPassword(e.currentTarget.value)}
 						className="border rounded-sm border-black"
 						type="password"
 						name="password"
