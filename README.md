@@ -1,5 +1,7 @@
 <img src="./.readme/noroff-light.png" width="160" align="right">
 
+Sample user credentials: coolguy / 123456
+
 # JS Frameworks Course Assignment
 
 ## Brief
@@ -16,11 +18,11 @@ You can use either a REST or GraphQL API for the API calls.
 
 Your app should have the following paths:
 
--   "/"
--   "/detail/:param"
--   "/contact"
--   "/login"
--   "/admin"
+- "/"
+- "/detail/:param"
+- "/contact"
+- "/login"
+- "/admin"
 
 The admin path won't appear in your navigation.
 
@@ -30,8 +32,8 @@ Use reusable components where appropriate and pay attention to how the component
 
 Find an API that returns at least:
 
--   an array of items
--   a single item retrieved by a parameter (id, name, slug, etc)
+- an array of items
+- a single item retrieved by a parameter (id, name, slug, etc)
 
 If you are using Next you can also hard-code json and return it from API routes created in `pages/api/*`.
 
@@ -51,11 +53,11 @@ Display at least 3 properties from the item.
 
 Create a form with the following inputs and validation:
 
--   First name - required, minimum 3 characters
--   Last name - required, minimum 4 characters
--   Email - required, must be in a valid email format
--   Subject - required, this must be a select box with at least 2 options
--   Message - required, minimum 10 characters.
+- First name - required, minimum 3 characters
+- Last name - required, minimum 4 characters
+- Email - required, must be in a valid email format
+- Subject - required, this must be a select box with at least 2 options
+- Message - required, minimum 10 characters.
 
 ### Login
 
