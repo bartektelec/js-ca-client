@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ApolloClient, InMemoryCache, HttpLink, gql } from '@apollo/client';
+import { ApolloClient, InMemoryCache, HttpLink } from '@apollo/client';
 import axios from 'axios';
 
 const useAuth = () => {

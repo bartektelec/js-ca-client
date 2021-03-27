@@ -1,7 +1,6 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import authContext from '../utils/auth';
-import useAuth from '../hooks/useAuth';
 
 export interface AdminProps {}
 
@@ -9,9 +8,11 @@ const Admin: React.FC<AdminProps> = () => {
 	const router = useRouter();
 	const { logOut, isLoggedIn } = useContext(authContext);
 
-	if (!isLoggedIn()) {
-		router.push('/login');
-	}
+	useEffect(() => {
+		if (!isLoggedIn()) {
+			router.push('/login');
+		}
+	});
 	return (
 		<div>
 			<h1>Hello Admin!</h1>

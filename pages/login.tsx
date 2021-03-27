@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import authContext from '../utils/auth';
 
@@ -15,9 +15,11 @@ const Login: React.FC<LoginProps> = () => {
 
 	const { isLoggedIn, logIn } = useContext(authContext);
 
-	if (isLoggedIn()) {
-		router.push('/admin');
-	}
+	useEffect(() => {
+		if (isLoggedIn()) {
+			router.push('/admin');
+		}
+	});
 
 	return (
 		<div>
